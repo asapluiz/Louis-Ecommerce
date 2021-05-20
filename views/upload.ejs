@@ -1,0 +1,45 @@
+<%- include("header"); -%>
+    <main>
+
+      <div class='.container col-lg-4'>
+        <form name="myForm"  class="row contact_form" action="<%=links%>" method="post">
+            <div class="col-md-12 form-group p_star">
+                <input type="text" class="form-control" id="title" name="title" value="<%=product.title%>"
+                    placeholder="Title" required>
+            </div>
+            <div class="col-md-12 form-group p_star">
+                <input type="text" class="form-control" id="img1" name="img1" value="<%=product.img1%>"
+                    placeholder="image link1" required>
+            </div>
+            <div class="col-md-12 form-group p_star">
+                <input type="text" class="form-control" id="img2" name="img2" value="<%=product.img2%>"
+                    placeholder="image link2" required>
+            </div>
+            <div class="col-md-12 form-group p_star">
+                <input type="text" class="form-control" id="img3" name="img3" value="<%=product.img3%>"
+                    placeholder="image link3" required>
+            </div>
+            <div class="col-md-12 form-group p_star">
+                <input type="text" class="form-control" id="cat" name="cat" value="<%=product.category%>"
+                    placeholder="category A or B" required>
+            </div>
+            <div class="col-md-12 form-group p_star">
+                <input type="text" class="form-control" id="price" name="price" value="<%=product.price%>"
+                    placeholder="enter price eg'$ 140'" required>
+            </div>
+            <div class="col-md-12 form-group p_star">
+                <textarea name="details" rows="8" cols="80" ><%=product.details%></textarea>
+            </div>
+
+            <button type="submit" value="submit" class="btn_3 col-md-12">
+                ADD
+            </button>
+
+        </form>
+      </div>
+
+
+        <!--================login_part end =================-->
+    </main>
+
+    <%- include("footer"); -%>

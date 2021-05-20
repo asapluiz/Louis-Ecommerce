@@ -1,0 +1,91 @@
+<%- include("header"); -%>
+  <main>
+
+      <!--================Cart Area =================-->
+      <section class="cart_area section_padding">
+        <div class="container">
+          <div class="cart_inner">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <% carts.items.forEach(function(element){ %>
+                  <tr>
+                    <td>
+                      <div class="media">
+                        <div class="d-flex">
+                          <img src="<%= element.img%>" alt="" />
+                        </div>
+                        <div class="media-body">
+                          <p><%= element.title%></p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h5><%= element.price%></h5>
+                    </td>
+                    <td>
+                      <div class="product_count d-inline-block">
+                          <input type="number" onchange='getValue(this)' id="<%=element._id%>" value='<%=element.qty%>' name="quantity" min="1" max="10">
+                      </div>
+
+                    </td>
+                    <td>
+                      <h5><%=element.accumSingleTotalcost  %></h5>
+                    </td>
+                  </tr>
+                  <%})%>
+
+
+
+                  <tr class="bottom_button">
+                    <td>
+                      <a class="btn_1" href="/cart">Update Cart</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <h5>Subtotal</h5>
+                    </td>
+                    <td>
+                      <h5>$<%=carts.total%></h5>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <div class="checkout_btn_inner float-right">
+                <a class="btn_1" href="/shop">Continue Shopping</a>
+                <a class="btn_1 checkout_btn_1" href="/checkout">Proceed to checkout</a>
+              </div>
+            </div>
+          </div>
+      </section>
+
+
+        <script>
+        function getValue(sam){
+          var x = sam.value
+          console.log(x)
+        }
+        </script>
+
+      <!--================End Cart Area =================-->
+  </main>>
+<%- include("footer"); -%>
